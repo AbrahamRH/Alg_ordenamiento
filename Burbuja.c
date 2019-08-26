@@ -94,8 +94,7 @@ void Bubble_sort(int* vector,int* n,int* direccion)
 
 void Print_vector(int* vector,int* n)                        
 {
-    int i;
-    for(i = 0;i < *n; i++)
+    for(size_t i = 0;i < *n; i++)
 	    printf("%3d",vector[i]);
     printf("\n");
 }
