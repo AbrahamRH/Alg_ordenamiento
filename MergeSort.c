@@ -6,12 +6,12 @@
 #include <iso646.h>
 #include <stdbool.h>
 
-void Print_vector(int* vector,int* n);
-void Merge_sort(int* vector, int low, int high,int* direccion);
-void merge_asc(int* vector, size_t low, size_t high, size_t mid);
-void merge_desc(int* vector, size_t low, size_t high, size_t mid);
+void Print_vector(int* vector,int* n);					//Funcion para imprimir vectores
+void Merge_sort(int* vector, int low, int high,int* direccion);		//Funcion de activacion de Merge Sort
+void merge_asc(int* vector, size_t low, size_t high, size_t mid);	//Funcion de ordenacion ascendente
+void merge_desc(int* vector, size_t low, size_t high, size_t mid);	//Funcion de ordenacion descendente
 
-size_t g_conteo;
+size_t g_conteo;				//Variable global para realizar el conteo de las comparaciones
 
 int main(int argc, char** argv)
 {
@@ -22,7 +22,7 @@ int main(int argc, char** argv)
     }
 
     int  valores   = atoi(argv[1]);
-    int* vector    = (int*)malloc(sizeof(int)*valores);
+    int* vector    = (int*)malloc(sizeof(int)*valores);	    //Se aparta la memoria necesaria para guardar en el vector
     int  direccion = atoi(argv[2]);
 
     /*Se llena el vector de valores pseudo aleatorios*/
@@ -36,7 +36,7 @@ int main(int argc, char** argv)
     printf("El vector ordenado es: \n");
     Print_vector(vector, &valores);
     printf("El numero de pasos fue: %li\n",g_conteo);
-    free(vector);
+    free(vector);						//Se libera el espacio apartado de la memoria
 }
 
 
